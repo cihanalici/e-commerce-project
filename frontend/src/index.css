@@ -18,9 +18,9 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header"
-    "main"
-    "footer";
+    'header'
+    'main'
+    'footer';
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
@@ -40,13 +40,14 @@ footer {
 }
 /* Common */
 h1 {
-    font-size: 1.8rem;
-    padding: 1rem 0;
+  font-size: 1.8rem;
+  padding: 1rem 0;
 }
 h2 {
-    font-size: 1.6rem;
-    padding: 1rem 0;
+  font-size: 1.6rem;
+  padding: 1rem 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -66,8 +67,8 @@ select,
 textarea,
 button {
   padding: 1rem;
-  border-radius: 00.5rem;
-  border: 0.1rem solid #a4a4a4;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -119,7 +120,7 @@ a.brand {
 .row.top {
   align-items: flex-start;
 }
-.col-1{
+.col-1 {
   flex: 1 1 25rem;
 }
 .col-2 {
@@ -131,15 +132,15 @@ a.brand {
 
 /* Image */
 img {
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 img.small {
   max-width: 5rem;
   width: 100%;
 }
 img.medium {
-    max-width: 29rem;
-    width: 100%;
+  max-width: 29rem;
+  width: 100%;
 }
 img.large {
   width: 100%;
@@ -147,29 +148,30 @@ img.large {
 
 /* Card */
 .card {
-    border: 0.1rem #c0c0c0 solid;
-    border-radius: 0.5rem;
-    margin: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
 }
 .card-body {
-    padding: 1rem;
+  padding: 1rem;
 }
 .card-body > * {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .price {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 /* Rating */
 .rating span {
-    color: #f0c040;
-    margin: 0.1rem;
+  color: #f0c040;
+  margin: 0.1rem;
 }
 .rating span:last-child {
   color: #404040;
 }
 /* Alert */
-.loading{
+.loading {
   display: block !important;
 }
 .success {
@@ -189,7 +191,7 @@ img.large {
 }
 .alert-danger {
   color: #a02020;
-  background-color: #ffe0e0e0;
+  background-color: #ffe0e0;
 }
 /* Form */
 .form {
@@ -221,7 +223,7 @@ img.large {
   margin-top: 0.4rem;
   border-radius: 0.5rem;
 }
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content {
   display: block;
 }
 /* Checkout Steps */
