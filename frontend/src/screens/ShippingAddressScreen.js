@@ -29,7 +29,7 @@ export default function ShippingAddressScreen(props) {
 
   return (
     <div>
-      <CheckoutSteps ste1 step2></CheckoutSteps>
+      <CheckoutSteps step1 step2></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>
           <h1>Shipping Address</h1>
