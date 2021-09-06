@@ -12,6 +12,7 @@ import ProductScreen from "./screens/ProductScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import ShirtsScreen from "./screens/ShirtsScreen";
 import SigninScreen from "./screens/SigninScreen";
 
 function App() {
@@ -31,6 +32,16 @@ function App() {
             <Link className="brand" to="/">
               amazona
             </Link>
+            <div className="dropdown">
+              <Link to="#">
+                  Categories <i className="fa fa-caret-down"></i>{" "}
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/shirts">Shirts</Link>
+                  </li>
+                </ul>
+            </div>
           </div>
           <div>
             <Link to="/cart">
@@ -74,6 +85,7 @@ function App() {
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
           <Route path="/profile" component={ProfileScreen}></Route>
+          <Route path="/shirts" component={ShirtsScreen} exact></Route>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>
