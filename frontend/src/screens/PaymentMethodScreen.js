@@ -26,6 +26,7 @@ export default function PaymentMethodScreen(props) {
         <div>
           <div>
             <input
+              className="inputClass"
               type="radio"
               id="paypal"
               value="PayPal"
