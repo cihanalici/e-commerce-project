@@ -21,41 +21,33 @@ import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
 
 function App() {
+  // cart verisini getir
   const cart = useSelector((state) => state.cart);
-  // const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const { cartItems } = cart;
+  // user için signin verisi
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-  const productList = useSelector((state) => state.productList);
-  const { products } = productList;
-  console.log(products)
+
+
   const dispatch = useDispatch();
   const signoutHandler = () => {
     dispatch(signout());
   };
 
-  // const productCategoryList = useSelector((state) => state.productCategoryList);
-  // const {
-  //   loading: loadingCategories,
-  //   error: errorCategories,
-  //   categories,
-  // } = productCategoryList;
-  // useEffect(() => {
-  //   dispatch(listProductCategories());
-  // }, [dispatch]);
+
   return (
     <BrowserRouter>
       <div className="grid-container">
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              PunkBeer
+              FitShirts
             </Link>
           </div>
           
           <div>
             <Link to="/cart">
-              Cart
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}

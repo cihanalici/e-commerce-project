@@ -10,7 +10,7 @@ export default function HomeScreen() {
   // state ile inputBox ve filtered array verilerini tanımlama
   const [name, setName] = useState("");
   const [filtered, setFiltered] = useState(null);
-  console.log(filtered);
+
 
   // veritabanındaki product'a ulaşmak (redux) state'i kullanarak
 
