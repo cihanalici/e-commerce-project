@@ -15,6 +15,7 @@ export const generateToken = (user) => {
   );
 };
 
+// jwt ile yetkilendirmenin yapılması
 export const isAuth = (req, res, next) => {
   const authorization = req.headers.authorization;
   if (authorization) {
@@ -36,6 +37,7 @@ export const isAuth = (req, res, next) => {
   }
 };
 
+// kullanıcının admin olup olmadığını token ile kontrol edilmesi
 export const isAdmin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next();

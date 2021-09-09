@@ -13,12 +13,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// veritabanına bağlanmak
 mongoose.connect(
   process.env.MONGODB_URL || "mongodb://localhost:27017/ecommerce" || "mongodb+srv://cihaom:OeDSy5CHPOhRm0wD@cluster0.4hbzr.mongodb.net/ecommerce",
   {
     useUnifiedTopology: true,
   }
 );
+// routerlara yönlendirilim sağlanması
 app.use("/api/uploads", uploadRouter);
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
@@ -32,10 +34,12 @@ app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 //   res.send("Server is ready");
 // });
 
+// hata kontrolü
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
+// spesifik bir porttan uygulamanın dinlenilmesi
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);

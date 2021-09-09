@@ -3,6 +3,7 @@ import expressAsyncHandler from "express-async-handler";
 import Order from "../models/orderModel.js";
 import { isAdmin, isAuth } from "../utils.js";
 
+// sipariş ekranına admin veya doğrulanmış user ise girilmesini sağlayan router yapısı 
 const orderRouter = express.Router();
 orderRouter.get(
   "/",
@@ -13,6 +14,7 @@ orderRouter.get(
     res.send(orders);
   })
 );
+
 orderRouter.get(
   "/mine",
   isAuth,

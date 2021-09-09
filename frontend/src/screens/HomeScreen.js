@@ -12,7 +12,7 @@ export default function HomeScreen() {
   const [filtered, setFiltered] = useState(null);
 
 
-  // veritabanındaki product'a ulaşmak (redux) state'i kullanarak
+  // veritabanındaki product'a ulaşmak (redux) state'i kullanmak
 
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
