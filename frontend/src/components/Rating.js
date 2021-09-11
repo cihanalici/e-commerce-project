@@ -2,6 +2,8 @@ import React from "react";
 
 export default function Rating(props) {
   const { rating, numReviews } = props;
+  // belirli yıldıza göre ternary operatör ile
+  // reyting sayısını ekranda gösterme işlemi
   return (
     <div className="rating">
       <span>

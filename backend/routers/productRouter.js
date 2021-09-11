@@ -5,7 +5,7 @@ import Product from "../models/productModel.js";
 import { isAdmin, isAuth } from "../utils.js";
 
 const productRouter = express.Router();
-
+// ürün listeleme
 productRouter.get(
   "/",
   expressAsyncHandler(async (req, res) => {
@@ -17,7 +17,7 @@ productRouter.get(
     res.send(products); 
   })
 );
-
+// ürünü başlangıç olarak veritabanına ekleme
 productRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
@@ -26,7 +26,7 @@ productRouter.get(
     res.send({ createdProducts });
   })
 );
-
+// id ye veritabanından ürün alma
 productRouter.get(
   "/:id",
   expressAsyncHandler(async (req, res) => {
@@ -38,7 +38,7 @@ productRouter.get(
     }
   })
 );
-
+// ürün ekleme
 productRouter.post(
   "/",
   isAuth,
@@ -60,6 +60,7 @@ productRouter.post(
   })
 );
 
+//ürün güncelleme
 productRouter.put(
   "/:id",
   isAuth,
@@ -83,6 +84,7 @@ productRouter.put(
   })
 );
 
+//ürün silme
 productRouter.delete(
   "/:id",
   isAuth,

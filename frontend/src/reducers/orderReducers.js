@@ -6,10 +6,6 @@ import {
   ORDER_DELETE_FAIL,
   ORDER_DELETE_REQUEST,
   ORDER_DELETE_SUCCESS,
-  ORDER_DELIVER_FAIL,
-  ORDER_DELIVER_REQUEST,
-  ORDER_DELIVER_RESET,
-  ORDER_DELIVER_SUCCESS,
   ORDER_DETAILS_FAIL,
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
@@ -25,6 +21,7 @@ import {
   ORDER_PAY_SUCCESS,
 } from "../constants/orderConstants";
 
+// sipariş vermek
 export const orderCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_CREATE_REQUEST:
@@ -40,6 +37,7 @@ export const orderCreateReducer = (state = {}, action) => {
   }
 };
 
+// sipariş detayı
 export const orderDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case ORDER_DETAILS_REQUEST:
@@ -53,6 +51,7 @@ export const orderDetailsReducer = (state = { loading: true }, action) => {
   }
 };
 
+// ödeme
 export const orderPayReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_PAY_REQUEST:
@@ -68,6 +67,7 @@ export const orderPayReducer = (state = {}, action) => {
   }
 };
 
+// sipariş listelemesi(kullanıcı)
 export const orderMineListReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case ORDER_MINE_LIST_REQUEST:
@@ -81,6 +81,7 @@ export const orderMineListReducer = (state = { orders: [] }, action) => {
   }
 };
 
+// sipariş detayı(admin)
 export const orderListReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case ORDER_LIST_REQUEST:
@@ -94,6 +95,7 @@ export const orderListReducer = (state = { orders: [] }, action) => {
   }
 };
 
+// sipariş silme
 export const orderDeleteReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_DELETE_REQUEST:
@@ -107,17 +109,4 @@ export const orderDeleteReducer = (state = {}, action) => {
   }
 };
 
-export const orderDeliverReducer = (state = {}, action) => {
-  switch (action.type) {
-    case ORDER_DELIVER_REQUEST:
-      return { loading: true };
-    case ORDER_DELIVER_SUCCESS:
-      return { loading: false, success: true };
-    case ORDER_DELIVER_FAIL:
-      return { loading: false, error: action.payload };
-    case ORDER_DELIVER_RESET:
-      return {};
-    default:
-      return state;
-  }
-};
+

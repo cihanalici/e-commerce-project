@@ -19,6 +19,7 @@ const {
   PRODUCT_DELETE_REQUEST,
 } = require('../constants/productConstants');
 
+// ürün listelenmesi
 export const productListReducer = (
   state = { loading: true, products: [] },
   action
@@ -35,7 +36,7 @@ export const productListReducer = (
   }
 };
 
-
+// ürün detay ekranı
 export const productDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case PRODUCT_DETAILS_REQUEST:
@@ -48,6 +49,8 @@ export const productDetailsReducer = (state = { loading: true }, action) => {
       return state;
   }
 };
+
+// ürün eklenmesi
 export const productCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_CREATE_REQUEST:
@@ -62,6 +65,8 @@ export const productCreateReducer = (state = {}, action) => {
       return state;
   }
 };
+
+// ürün güncellenmesi
 export const productUpdateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_UPDATE_REQUEST:
@@ -77,6 +82,7 @@ export const productUpdateReducer = (state = {}, action) => {
   }
 };
 
+// ürün silinmesi
 export const productDeleteReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_DELETE_REQUEST:

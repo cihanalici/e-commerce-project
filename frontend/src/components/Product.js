@@ -6,6 +6,7 @@ export default function Product(props) {
   const { product } = props;
   let history = useHistory();
 
+  // add to cart butonuna basılınca eğer stokta varsa sepete yönlendiriliyor.
   const addToCartHandler = () => {
     if(product.countInStock > 0) {
       history.push(`/cart/${product._id}?qty=1`);
@@ -13,6 +14,8 @@ export default function Product(props) {
       <h2>Product Is Not Avaible For Now!</h2>
     }
    };
+
+   // Ürünlerin listelenmesi
   return (
     <div key={product._id} className="card">
       <Link to={`/product/${product._id}`}>

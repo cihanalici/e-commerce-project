@@ -25,12 +25,7 @@ export default function OrderScreen(props) {
     error: errorPay,
     success: successPay,
   } = orderPay;
-  const orderDeliver = useSelector((state) => state.orderDeliver);
-  const {
-    loading: loadingDeliver,
-    error: errorDeliver,
-    success: successDeliver,
-  } = orderDeliver;
+
   const dispatch = useDispatch();
   useEffect(() => {
     const addPayPalScript = async () => {
@@ -47,7 +42,6 @@ export default function OrderScreen(props) {
     if (
       !order ||
       successPay ||
-      successDeliver ||
       (order && order._id !== orderId)
     ) {
       dispatch({ type: ORDER_PAY_RESET });
@@ -62,7 +56,7 @@ export default function OrderScreen(props) {
         }
       }
     }
-  }, [dispatch, orderId, sdkReady, successPay, successDeliver, order]);
+  }, [dispatch, orderId, sdkReady, successPay, order]);
 
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(order, paymentResult));
@@ -83,7 +77,7 @@ export default function OrderScreen(props) {
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Shippring</h2>
+                <h2>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
                   <strong>Address: </strong> {order.shippingAddress.address},
@@ -201,10 +195,6 @@ export default function OrderScreen(props) {
               )}
               {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                 <li>
-                  {loadingDeliver && <LoadingBox></LoadingBox>}
-                  {errorDeliver && (
-                    <MessageBox variant="danger">{errorDeliver}</MessageBox>
-                  )}
                   <button
                     type="button"
                     className="primary block"

@@ -15,7 +15,7 @@ userRouter.get(
     res.send({ createdUsers });
   })
 );
-
+// giriş yapma
 userRouter.post(
   "/signin",
   expressAsyncHandler(async (req, res) => {
@@ -35,7 +35,7 @@ userRouter.post(
     res.status(401).send({ message: "Invalid email or password" });
   })
 );
-
+// üye olma
 userRouter.post(
   "/register",
   expressAsyncHandler(async (req, res) => {
@@ -54,7 +54,7 @@ userRouter.post(
     });
   })
 );
-
+// id ye göre kullanıcı çekme
 userRouter.get(
   "/:id",
   expressAsyncHandler(async (req, res) => {
@@ -66,7 +66,7 @@ userRouter.get(
     }
   })
 );
-
+// 
 userRouter.put(
   "/profile",
   isAuth,
@@ -89,7 +89,7 @@ userRouter.put(
     }
   })
 );
-
+// kullanıcıları listeleme
 userRouter.get(
   "/",
   isAuth,
@@ -99,7 +99,7 @@ userRouter.get(
     res.send(users);
   })
 );
-
+// kullanıcı silme
 userRouter.delete('/:id', isAuth, isAdmin, expressAsyncHandler(async (req,res)=> {
   const user = await User.findById(req.params.id);
   if(user) {

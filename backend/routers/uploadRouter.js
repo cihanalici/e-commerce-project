@@ -4,6 +4,9 @@ import {isAuth} from '../utils.js'
 
 const uploadRouter = express.Router();
 
+// resimi bilgisayarda bulunan kaynaklardan yükleyebilmek için
+// oluşturulan yapı
+
 const storage = multer.diskStorage({
     destination(req, file, cb) {
         cb(null, 'uploads/');

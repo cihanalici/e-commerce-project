@@ -6,6 +6,8 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
 } from '../constants/cartConstants';
 
+// sepet ekleme, sepetten silme, sepete kargo adresinin girilmesi
+// ve  karttan silme işlemleri
 export const cartReducer = (state = { cartItems: [] }, action) => {
   switch (action.type) {
     case CART_ADD_ITEM:

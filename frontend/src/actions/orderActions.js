@@ -24,6 +24,7 @@ import {
   ORDER_DELIVER_REQUEST,
 } from "../constants/orderConstants";
 
+// Sipariş oluşturma
 export const createOrder = (order) => async (dispatch, getState) => {
   dispatch({ type: ORDER_CREATE_REQUEST, payload: order });
   try {
@@ -48,7 +49,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     });
   }
 };
-
+// sipariş detayı
 export const detailsOrder = (orderId) => async (dispatch, getState) => {
   dispatch({ type: ORDER_DETAILS_REQUEST, payload: orderId });
   const {
@@ -67,7 +68,7 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DETAILS_FAIL, payload: message });
   }
 };
-
+// ödeme
 export const payOrder =
   (order, paymentResult) => async (dispatch, getState) => {
     dispatch({ type: ORDER_PAY_REQUEST, payload: { order, paymentResult } });
@@ -91,7 +92,7 @@ export const payOrder =
       dispatch({ type: ORDER_PAY_FAIL, payload: message });
     }
   };
-
+// listeleme(user)
 export const listOrderMine = () => async (dispatch, getState) => {
   dispatch({ type: ORDER_MINE_LIST_REQUEST });
   const {
@@ -112,7 +113,7 @@ export const listOrderMine = () => async (dispatch, getState) => {
     dispatch({ type: ORDER_MINE_LIST_FAIL, payload: message });
   }
 };
-
+// listeleme(admin)
 export const listOrders = () => async (dispatch, getState) => {
   dispatch({ type: ORDER_LIST_REQUEST });
   const {
@@ -131,7 +132,7 @@ export const listOrders = () => async (dispatch, getState) => {
     dispatch({ type: ORDER_LIST_FAIL, payload: message });
   }
 };
-
+// sipariş silme
 export const deleteOrder = (orderId) => async (dispatch, getState) => {
   dispatch({ type: ORDER_DELETE_REQUEST, payload: orderId });
   const {
@@ -150,7 +151,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DELETE_FAIL, payload: message });
   }
 };
-
+// sipariş teslim etme
 export const deliverOrder = (orderId) => async (dispatch, getState) => {
   dispatch({ type: ORDER_DELIVER_REQUEST, payload: orderId });
   const {

@@ -22,6 +22,7 @@ import {
   USER_UPDATE_PROFILE_SUCCESS,
 } from "../constants/userConstants";
 
+// kayıt olma işlemi için reducer
 export const userRegisterReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
@@ -35,6 +36,7 @@ export const userRegisterReducer = (state = {}, action) => {
   }
 };
 
+// giriş yapmak için reducer 
 export const userSigninReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_SIGNIN_REQUEST:
@@ -50,6 +52,7 @@ export const userSigninReducer = (state = {}, action) => {
   }
 };
 
+// kullanıcı detay ekranı kontrolü için reducer
 export const userDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case USER_DETAILS_REQUEST:
@@ -64,6 +67,7 @@ export const userDetailsReducer = (state = { loading: true }, action) => {
   }
 };
 
+// kullanıcı bilgileri güncellenmesi
 export const userUpdateProfileReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_UPDATE_PROFILE_REQUEST:
@@ -79,6 +83,7 @@ export const userUpdateProfileReducer = (state = {}, action) => {
   }
 };
 
+// kullanıcı listelenmesi
 export const userListReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case USER_LIST_REQUEST:
@@ -92,6 +97,7 @@ export const userListReducer = (state = { loading: true }, action) => {
   }
 };
 
+// kullanıcı silimesi
 export const userDeleteReducer = (state = {}, action) => {
   switch (action.type){
     case USER_DELETE_REQUEST:

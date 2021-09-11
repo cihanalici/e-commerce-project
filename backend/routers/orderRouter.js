@@ -23,6 +23,8 @@ orderRouter.get(
     res.send(orders);
   })
 );
+
+// sipariş ekleme
 orderRouter.post(
   "/",
   isAuth,
@@ -47,7 +49,7 @@ orderRouter.post(
     }
   })
 );
-
+// bir adet siparişin ekranda gösterilmesi
 orderRouter.get(
   "/:id",
   isAuth,
@@ -60,7 +62,7 @@ orderRouter.get(
     }
   })
 );
-
+// ödeme/durum güncelleme
 orderRouter.put(
   "/:id/pay",
   isAuth,
@@ -82,7 +84,7 @@ orderRouter.put(
     }
   })
 );
-
+// sipariş silme
 orderRouter.delete(
   "/:id",
   isAuth,
@@ -98,22 +100,5 @@ orderRouter.delete(
   })
 );
 
-orderRouter.put(
-  '/:id/deliver',
-  isAuth,
-  isAdmin,
-  expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
-    if (order) {
-      order.isDelivered = true;
-      order.deliveredAt = Date.now();
-
-      const updatedOrder = await order.save();
-      res.send({ message: 'Order Delivered', order: updatedOrder });
-    } else {
-      res.status(404).send({ message: 'Order Not Found' });
-    }
-  })
-);
 
 export default orderRouter;

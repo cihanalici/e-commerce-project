@@ -21,6 +21,7 @@ import {
   USER_UPDATE_PROFILE_SUCCESS,
 } from "../constants/userConstants";
 
+// kayıt olma
 export const register = (name, email, password) => async (dispatch) => {
   dispatch({ type: USER_REGISTER_REQUEST, payload: { email, password } });
   try {
@@ -43,6 +44,7 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
+// giriş yapma
 export const signin = (email, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST, payload: { email, password } });
   try {
@@ -61,6 +63,7 @@ export const signin = (email, password) => async (dispatch) => {
   }
 };
 
+// çıkış yapma
 export const signout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
   localStorage.removeItem("cartItems");
@@ -68,6 +71,7 @@ export const signout = () => (dispatch) => {
   dispatch({ type: USER_SIGNOUT });
 };
 
+// kullanıcı detayı
 export const detailsUser = (userId) => async (dispatch, getState) => {
   dispatch({ type: USER_DETAILS_REQUEST, payload: userId });
   const {
@@ -90,6 +94,7 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
   }
 };
 
+// kullanıcı profili güncelleme
 export const updateUserProfile = (user) => async (dispatch, getState) => {
   dispatch({ type: USER_UPDATE_PROFILE_REQUEST, payload: user });
   const {
@@ -111,6 +116,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   }
 };
 
+// kullanıcı listesi (admin)
 export const listUsers = () => async (dispatch, getState) => {
   dispatch({ type: USER_LIST_REQUEST });
   try {
@@ -132,6 +138,7 @@ export const listUsers = () => async (dispatch, getState) => {
   }
 };
 
+// kullanıcı silme(admin)
 export const deleteUser = (userId) => async (dispatch, getState) => {
   dispatch({ type: USER_DELETE_REQUEST, payload: userId});
   const {
