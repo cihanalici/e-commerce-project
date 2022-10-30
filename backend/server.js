@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // veritabanına bağlanmak
 mongoose.connect(
-  process.env.MONGODB_URL || "mongodb://localhost:27017/ecommerce" || "mongodb+srv://cihaom:OeDSy5CHPOhRm0wD@cluster0.4hbzr.mongodb.net/ecommerce",
+  process.env.MONGODB_URL || "mongodb://localhost:27017/ecommerce",
   {
     useUnifiedTopology: true,
   }
