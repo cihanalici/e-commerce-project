@@ -13,7 +13,7 @@ The following resources were used to build the site:  <br/>
 
 # To Start Application
 
-1- Install MongoDB Compass or use my mongodb access key <br/>
+1- Install MongoDB Compass <br/>
 2- Run backend to type npm install and  npm start in root folder  <br/>
 3- Run frontend to type yarn install and yarn start in ./frontend folder  <br/>
 
